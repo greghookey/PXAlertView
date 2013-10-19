@@ -143,7 +143,7 @@ static const CGFloat AlertViewButtonHeight = 44;
         _cancelButton.backgroundColor = [UIColor clearColor];
         
         [_cancelButton setTitleColor:tintColor forState:UIControlStateNormal];
-        [_cancelButton setTitleColor:[UIColor colorWithWhite:0.25 alpha:1] forState:UIControlStateHighlighted];
+        [_cancelButton setTitleColor:tintColor forState:UIControlStateHighlighted];
         [_cancelButton addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
         [_cancelButton addTarget:self action:@selector(setBackgroundColorForButton:) forControlEvents:UIControlEventTouchDown];
         [_cancelButton addTarget:self action:@selector(clearBackgroundColorForButton:) forControlEvents:UIControlEventTouchDragExit];
