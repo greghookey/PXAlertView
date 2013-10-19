@@ -72,7 +72,7 @@ static const CGFloat AlertViewButtonHeight = 44;
         self.frame = _alertWindow.bounds;
         
         _backgroundView = [[UIView alloc] initWithFrame:_alertWindow.bounds];
-        _backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:1.0f];
+        _backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25f];
         _backgroundView.alpha = 0;
         [self addSubview:_backgroundView];
         
