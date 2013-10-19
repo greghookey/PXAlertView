@@ -272,26 +272,30 @@ static const CGFloat AlertViewButtonHeight = 44;
 #pragma mark - public
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
+                          tintColor:(UIColor *)tintColor
 {
-    return [PXAlertView showAlertWithTitle:title message:nil cancelTitle:NSLocalizedString(@"Ok", nil) completion:nil];
+    return [PXAlertView showAlertWithTitle:title message:nil cancelTitle:NSLocalizedString(@"Ok", nil) tintColor:tintColor completion:nil];
 }
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
                             message:(NSString *)message
+                          tintColor:(UIColor *)tintColor
 {
-    return [PXAlertView showAlertWithTitle:title message:message cancelTitle:NSLocalizedString(@"Ok", nil) completion:nil];
+    return [PXAlertView showAlertWithTitle:title message:message cancelTitle:NSLocalizedString(@"Ok", nil) tintColor:tintColor completion:nil];
 }
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
                             message:(NSString *)message
+                          tintColor:(UIColor *)tintColor
                          completion:(void(^) (BOOL cancelled))completion
 {
-    return [PXAlertView showAlertWithTitle:title message:message cancelTitle:NSLocalizedString(@"Ok", nil) completion:completion];
+    return [PXAlertView showAlertWithTitle:title message:message cancelTitle:NSLocalizedString(@"Ok", nil) tintColor:tintColor completion:completion];
 }
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
                             message:(NSString *)message
                         cancelTitle:(NSString *)cancelTitle
+                          tintColor:(UIColor *)tintColor
                          completion:(void(^) (BOOL cancelled))completion
 {
     PXAlertView *alertView = [[PXAlertView alloc] initAlertWithTitle:title
@@ -309,6 +313,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                             message:(NSString *)message
                         cancelTitle:(NSString *)cancelTitle
                          otherTitle:(NSString *)otherTitle
+                          tintColor:(UIColor *)tintColor
                          completion:(void(^) (BOOL cancelled))completion
 {
     PXAlertView *alertView = [[PXAlertView alloc] initAlertWithTitle:title
@@ -326,6 +331,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                             message:(NSString *)message
                         cancelTitle:(NSString *)cancelTitle
                          otherTitle:(NSString *)otherTitle
+                          tintColor:(UIColor *)tintColor
                         contentView:(UIView *)view
                          completion:(void(^) (BOOL cancelled))completion
 {
