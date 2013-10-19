@@ -72,12 +72,12 @@ static const CGFloat AlertViewButtonHeight = 44;
         self.frame = _alertWindow.bounds;
         
         _backgroundView = [[UIView alloc] initWithFrame:_alertWindow.bounds];
-        _backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
+        _backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:1.0f];
         _backgroundView.alpha = 0;
         [self addSubview:_backgroundView];
         
         _alertView = [[UIView alloc] init];
-        _alertView.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1];
+        _alertView.backgroundColor = [UIColor colorWithWhite:0.10 alpha:1];
         _alertView.layer.cornerRadius = 8.0;
         _alertView.layer.opacity = .95;
         _alertView.clipsToBounds = YES;
@@ -119,18 +119,17 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                                   44)];
         _messageLabel.text = message;
         _messageLabel.backgroundColor = [UIColor clearColor];
-        _messageLabel.textColor = [UIColor whiteColor];
+        _messageLabel.textColor = tintColor;
         _messageLabel.textAlignment = NSTextAlignmentCenter;
         _messageLabel.font = [UIFont systemFontOfSize:15];
         _messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _messageLabel.numberOfLines = 0;
         _messageLabel.frame = [self adjustLabelFrameHeight:self.messageLabel];
-        _messageLabel.textColor = tintColor;
         [_alertView addSubview:_messageLabel];
         
         // Line
         CALayer *lineLayer = [CALayer layer];
-        lineLayer.backgroundColor = [[UIColor colorWithWhite:0.90 alpha:0.3] CGColor];
+        lineLayer.backgroundColor = [tintColor CGColor];
         lineLayer.frame = CGRectMake(0, _messageLabel.frame.origin.y + _messageLabel.frame.size.height + AlertViewVerticalElementSpace, AlertViewWidth, 0.5);
         [_alertView.layer addSublayer:lineLayer];
         
@@ -143,7 +142,7 @@ static const CGFloat AlertViewButtonHeight = 44;
         }
         _cancelButton.backgroundColor = [UIColor clearColor];
         
-        [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_cancelButton setTitleColor:tintColor forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor colorWithWhite:0.25 alpha:1] forState:UIControlStateHighlighted];
         [_cancelButton addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
         [_cancelButton addTarget:self action:@selector(setBackgroundColorForButton:) forControlEvents:UIControlEventTouchDown];
@@ -158,7 +157,7 @@ static const CGFloat AlertViewButtonHeight = 44;
             [_otherButton setTitle:otherTitle forState:UIControlStateNormal];
             _otherButton.backgroundColor = [UIColor clearColor];
             _otherButton.titleLabel.font = [UIFont boldSystemFontOfSize:17];
-            [_otherButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_otherButton setTitleColor:tintColor forState:UIControlStateNormal];
             [_otherButton setTitleColor:[UIColor colorWithWhite:0.25 alpha:1] forState:UIControlStateHighlighted];
             [_otherButton addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
             [_otherButton addTarget:self action:@selector(setBackgroundColorForButton:) forControlEvents:UIControlEventTouchDown];
@@ -301,7 +300,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                              message:message
                                                          cancelTitle:cancelTitle
                                                           otherTitle:nil
-                                                           tintColor:[UIColor whiteColor]
+                                                           tintColor:tintColor
                                                          contentView:nil
                                                           completion:completion];
     [alertView show];
@@ -319,7 +318,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                              message:message
                                                          cancelTitle:cancelTitle
                                                           otherTitle:otherTitle
-                                                           tintColor:[UIColor whiteColor]
+                                                           tintColor:tintColor
                                                          contentView:nil
                                                           completion:completion];
     [alertView show];
@@ -338,7 +337,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                              message:message
                                                          cancelTitle:cancelTitle
                                                           otherTitle:otherTitle
-                                                           tintColor:[UIColor whiteColor]
+                                                           tintColor:tintColor
                                                          contentView:view
                                                           completion:completion];
     [alertView show];
