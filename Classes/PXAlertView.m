@@ -57,6 +57,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                  message:(NSString *)message
              cancelTitle:(NSString *)cancelTitle
               otherTitle:(NSString *)otherTitle
+               tintColor:(UIColor *)tintColor
              contentView:(UIView *)contentView
               completion:(void(^) (BOOL cancelled))completion
 {
@@ -90,6 +91,7 @@ static const CGFloat AlertViewButtonHeight = 44;
         _titleLabel.text = title;
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.tintColor = tintColor;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont boldSystemFontOfSize:17];
         _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -124,6 +126,7 @@ static const CGFloat AlertViewButtonHeight = 44;
         _messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _messageLabel.numberOfLines = 0;
         _messageLabel.frame = [self adjustLabelFrameHeight:self.messageLabel];
+        _messageLabel.tintColor = tintColor;
         [_alertView addSubview:_messageLabel];
         
         // Line
@@ -295,6 +298,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                              message:message
                                                          cancelTitle:cancelTitle
                                                           otherTitle:nil
+                                                           tintColor:[UIColor whiteColor]
                                                          contentView:nil
                                                           completion:completion];
     [alertView show];
@@ -311,6 +315,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                              message:message
                                                          cancelTitle:cancelTitle
                                                           otherTitle:otherTitle
+                                                           tintColor:[UIColor whiteColor]
                                                          contentView:nil
                                                           completion:completion];
     [alertView show];
@@ -328,6 +333,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                              message:message
                                                          cancelTitle:cancelTitle
                                                           otherTitle:otherTitle
+                                                           tintColor:[UIColor whiteColor]
                                                          contentView:view
                                                           completion:completion];
     [alertView show];

@@ -12,30 +12,36 @@
 
 @property (nonatomic, getter = isVisible) BOOL visible;
 
-+ (PXAlertView *)showAlertWithTitle:(NSString *)title;
-
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
-                            message:(NSString *)message;
+                          tintColor:(UIColor *)tintColor;
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
                             message:(NSString *)message
+                          tintColor:(UIColor *)tintColor;
+
++ (PXAlertView *)showAlertWithTitle:(NSString *)title
+                            message:(NSString *)message
+                          tintColor:(UIColor *)tintColor
                          completion:(void(^) (BOOL cancelled))completion;
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
                             message:(NSString *)message
                         cancelTitle:(NSString *)cancelTitle
+                            tintColor:(UIColor *)tintColor
                          completion:(void(^) (BOOL cancelled))completion;
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
                             message:(NSString *)message
                         cancelTitle:(NSString *)cancelTitle
                          otherTitle:(NSString *)otherTitle
+                          tintColor:(UIColor *)tintColor
                          completion:(void(^) (BOOL cancelled))completion;
 
 + (PXAlertView *)showAlertWithTitle:(NSString *)title
                             message:(NSString *)message
                         cancelTitle:(NSString *)cancelTitle
                          otherTitle:(NSString *)otherTitle
+                          tintColor:(UIColor *)tintColor
                         contentView:(UIView *)view
                          completion:(void(^) (BOOL cancelled))completion;
 

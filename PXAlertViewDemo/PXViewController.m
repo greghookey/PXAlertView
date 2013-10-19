@@ -31,6 +31,7 @@
     [PXAlertView showAlertWithTitle:@"Hello World"
                             message:@"Oh my this looks like a nice message."
                         cancelTitle:@"Ok"
+                          tintColor:[UIColor whiteColor]
                          completion:^(BOOL cancelled) {
                              if (cancelled) {
                                  NSLog(@"Simple Alert View cancelled");
@@ -45,6 +46,7 @@
     [PXAlertView showAlertWithTitle:@"Why this is a larger title! Even larger than the largest large thing that ever was large in a very large way."
                             message:@"Oh my this looks like a nice message. Yes it does, and it can span multiple lines... all the way down."
                         cancelTitle:@"Ok thanks, that's grand"
+                          tintColor:[UIColor whiteColor]
                          completion:^(BOOL cancelled) {
                              if (cancelled) {
                                  NSLog(@"Larger Alert View cancelled");
@@ -60,6 +62,7 @@
                             message:@"Pick the Red pill, or the blue pill"
                         cancelTitle:@"Blue"
                          otherTitle:@"Red"
+                          tintColor:[UIColor whiteColor]
                          completion:^(BOOL cancelled) {
                              if (cancelled) {
                                  NSLog(@"Cancel (Blue) button pressed");
@@ -75,6 +78,7 @@
                             message:@"Yay, it works!"
                         cancelTitle:@"Ok"
                          otherTitle:nil
+                          tintColor:[UIColor whiteColor]
                         contentView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ExampleImage.png"]]
                          completion:^(BOOL cancelled) {
                          }];
@@ -86,6 +90,7 @@
         [PXAlertView showAlertWithTitle:[NSString stringWithFormat:@"Hello %@", @(i)]
                                 message:@"Oh my this looks like a nice message."
                             cancelTitle:@"Ok"
+                              tintColor:[UIColor whiteColor]
                              completion:^(BOOL cancelled) {}];
     }
 }
