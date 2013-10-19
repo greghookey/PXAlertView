@@ -90,8 +90,7 @@ static const CGFloat AlertViewButtonHeight = 44;
                                                                 44)];
         _titleLabel.text = title;
         _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.textColor = [UIColor whiteColor];
-        _titleLabel.tintColor = tintColor;
+        _titleLabel.textColor = tintColor;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont boldSystemFontOfSize:17];
         _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -126,7 +125,7 @@ static const CGFloat AlertViewButtonHeight = 44;
         _messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _messageLabel.numberOfLines = 0;
         _messageLabel.frame = [self adjustLabelFrameHeight:self.messageLabel];
-        _messageLabel.tintColor = tintColor;
+        _messageLabel.textColor = tintColor;
         [_alertView addSubview:_messageLabel];
         
         // Line
